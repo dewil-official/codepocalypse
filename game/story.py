@@ -1,8 +1,6 @@
 import os
 
-from game.places import outside
-from game.places import downstairs
-from game.places import upstairs
+from game.places import outside, downstairs, upstairs
 from game.classes import choices
 from game.classes import point
 

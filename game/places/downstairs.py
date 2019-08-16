@@ -31,8 +31,7 @@ DOWNSTAIRS = {
         choices.sub_choice(name="2. Stairs", cmds=["stairs", "2" "two"], next_place="downstairs_stairs"),
     ]),
     "elevator": point(text=MSG["elevator"], choice_type="txt" nxt="end_game"),
-    "stairs": point(text=MSG["stairs", choice_type="txt" nxt="downstairs_"])
-
+    "stairs": point(text=MSG["stairs", choice_type="txt" nxt="downstairs_"]),
     "someplace": point(text="...", choice_type="list", choices=[
         choices.sub_choice(name="go to a", cmds=["go a", "a"], next_place="outside_place-a"),
         choices.sub_choice(name="go to b", cmds=["go b", "b"], next_place="place-b"),

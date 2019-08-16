@@ -25,5 +25,5 @@ UPSTAIRS = {
         choices.sub_choice(name="cola", cmds=["fritz","fritz cola"], next_place="drink"),
         choices.sub_choice(name="mate", cmds=["club","club mate"], next_place="drink"),
     ]),
-    "drink": 
+    "drink": "",
 }
