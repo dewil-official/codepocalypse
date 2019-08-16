@@ -30,7 +30,7 @@ You run.""",
 
 UPSTAIRS = {
     "join-conversation": point(text=MSG["join-conversation"], choice_type="txt", nxt="keep-going"),
-    "keep-going": point(text=MSG["choose-item"], choice_type="list", choices=[
+    "keep-going": point(text=MSG["keep-going"], choice_type="list", choices=[
         choices.sub_choice(name="cola", cmds=["fritz","fritz cola"], next_place="drink"),
         choices.sub_choice(name="mate", cmds=["club","club mate"], next_place="drink"),
     ]),
