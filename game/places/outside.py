@@ -29,14 +29,6 @@ But look...
 What the hell are they doing? 
 
 ...Touching heads, weird. That is soooooo Berlin…""",
-    # Take the elevator or stairs
-    "stairs-or-elevator": """Shall I enter the elevator?
-
-Don't want to be around this weird...head...touching people.
-
-Anyway, stairs will give me more space...
-
-It's up to you:  """,
 }
 
 OUTSIDE = {
@@ -44,16 +36,5 @@ OUTSIDE = {
     "not-going": point(text=MSG["not-going"], choice_type="list", choices=[
         choices.sub_choice(name="type restart", cmds=["restart","start over"], next_place="outside_intro"),
     ]),
-    "going": point(text=MSG["going"], choice_type="txt", nxt="outside_stairs-or-elevator"),
-    "stairs-or-elevator": point(text="stairs-or-elevator", choice_type="list", choices=[
-        choices.sub_choice(name="1. Elevator", cmds=["elevator", "1", "one"], next_place="outside_place-a"),
-        choices.sub_choice(name="go to b", cmds=["go b", "b"], next_place="place-b"),
-        choices.sub_choice(name="go to c", cmds=["go c", "c"], next_place="place-c"),
-    ]),
-
-    "someplace": point(text="...", choice_type="list", choices=[
-        choices.sub_choice(name="go to a", cmds=["go a", "a"], next_place="outside_place-a"),
-        choices.sub_choice(name="go to b", cmds=["go b", "b"], next_place="place-b"),
-        choices.sub_choice(name="go to c", cmds=["go c", "c"], next_place="place-c"),
-    ]),
+    "going": point(text=MSG["going"], choice_type="txt", nxt="downstairs"),
 }
