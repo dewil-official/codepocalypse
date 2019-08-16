@@ -86,24 +86,24 @@ too… You too have joined the great peace."""
 UPSTAIRS = {
     "join-conversation": point(text=MSG["join-conversation"], choice_type="txt", nxt="upstairs_keep-going"),
     "keep-going": point(text=MSG["keep-going"], choice_type="list", choices=[
-        choices.sub_choice(name="cola", cmds=["fritz","fritz cola"], next_place="upstairs_drink"),
-        choices.sub_choice(name="mate", cmds=["club","club mate"], next_place="upstairs_drink"),
+        choices.sub_choice(name="cola", cmds=[ "cola", "fritz","fritz cola"], next_place="upstairs_drink"),
+        choices.sub_choice(name="mate", cmds=["mate", "club","club mate"], next_place="upstairs_drink"),
     ]),
     "drink": point(text=MSG["drink"], choice_type="txt", nxt="upstairs_to-the-toilet"),
     "to-the-toilet": point(text=MSG["keep-going"], choice_type="list", choices=[
-        choices.sub_choice(name="infect", cmds=["help infect"], next_place="upstairs_help-infect"),
-        choices.sub_choice(name="hide", cmds=["run","go away"], next_place="upstairs_hide"),
+        choices.sub_choice(name="infect", cmds=["infect", "help infect"], next_place="upstairs_help-infect"),
+        choices.sub_choice(name="hide", cmds=["hide","run","go away"], next_place="upstairs_hide"),
     ]),
     "help-infect":point(text=MSG["help-infect"], choice_type="txt", nxt="upstairs_end-game"),
     "hide":point(text=MSG["hide"], choice_type="txt", nxt="frank-finds"),
     "frank-finds": point(text=MSG["frank-finds"], choice_type="list", choices=[
-        choices.sub_choice(name="trust", cmds=["trust him", "trust frank"], next_place="upstairs_not-believe"),
+        choices.sub_choice(name="trust", cmds=["trust", "trust him", "trust frank"], next_place="upstairs_not-believe"),
         choices.sub_choice(name="nope", cmds=["nope","dont trust", "no"], next_place="upstairs_trust-frank"),
     ]),
     "not-believe": point(text=MSG["not-believe"], choice_type="txt", nxt="upstairs_end-game"),
     "trust-frank": point(text=MSG["trust-frank"], choice_type="list", choices=[
-        choices.sub_choice(name="destroy", cmds=["kill", "die"], next_place="upstairs_destroy"),
-        choices.sub_choice(name="reprogram", cmds=["nope","dont trust", "no"], next_place="upstairs_reprogram"),
+        choices.sub_choice(name="destroy", cmds=["destroy", "kill", "die"], next_place="upstairs_destroy"),
+        choices.sub_choice(name="reprogram", cmds=["reprogram", "recode", "code"], next_place="upstairs_reprogram"),
     ]),
     "destroy":point(text=MSG["destroy"], choice_type="txt", nxt="end-game"),
     "reprogram":point(text=MSG["reprogram"], choice_type="txt", nxt="end-game"),
