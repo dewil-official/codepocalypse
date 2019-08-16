@@ -67,7 +67,7 @@ class list_choice(choice):
                 print("Invalid input. Try 'help' for a list of choices!")
                 continue
 
-ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyz "
+ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyz 12"
 def strip_input(str_input):
     str_input = str_input.lower()
     str_output = ""
