@@ -16,7 +16,16 @@ The kitchen area is weirdly quiet, but people are doing that weird head
 touch nonsense again. Weird… Anyway, what do you want? 
 
 Fritz Cola or Club-Mate?""",
-    ""
+    "drink": """You take your drink and it tells you that you’ve bought 10?!
+    
+What the hell. Suddenly you hear a thud and a shout you turn around and
+Adelina is attacking someone. You dont know who but it is vicious. And
+Thomas, yes Thomas is also stamping rapidly at the stomach of this student.
+
+Once the body goes limp, Adelina and Thomas, emotionless and calm, kneel down
+and almost peacefully touch their foreheads gently on that of the wounded student.
+
+You run.""",
 }
 
 UPSTAIRS = {
