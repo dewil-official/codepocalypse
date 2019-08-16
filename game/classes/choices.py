@@ -1,4 +1,4 @@
-import commands
+from game.classes import commands
 from game import story
 
 class choice:
@@ -19,6 +19,7 @@ class yesno_choice(choice):
     options = [commands.yes(), commands.no()]
 
     def get_choice(self):
+        self.print_options()
         while True:
             usr_input = strip_input(input("> "))
             if commands.help().isChoice(usr_input):
@@ -34,23 +35,6 @@ class yesno_choice(choice):
 
 # The list_choice() contains a list of sub_choice() objects.
 
-class list_choice(choice):
-    def __init__(self, choices=[ sub_choice("") ]):
-        self.options = choices
-    
-    def get_choice(self):
-        while True:
-            usr_input = strip_input(input("> "))
-            if commands.help().isChoice(usr_input):
-                commands.help().showHelp(self.options)
-                continue
-            for op in self.options:
-                if op.is_choice(usr_input):
-                    return self.options.index(op)
-            else:
-                print("Invalid input. Try 'help' for a list of choices!")
-                continue
-
 class sub_choice():
     # cmds is a list of strings: all the possible aliases
     def __init__(self, name="", cmds=["",""], next_place=""):
@@ -64,6 +48,24 @@ class sub_choice():
                 return True
         else:
             return False
+
+class list_choice(choice):
+    def __init__(self, choices=[ sub_choice("") ]):
+        self.options = choices
+    
+    def get_choice(self):
+        self.print_options()
+        while True:
+            usr_input = strip_input(input("> "))
+            if commands.help().isChoice(usr_input):
+                commands.help().showHelp(self.options)
+                continue
+            for op in self.options:
+                if op.is_choice(usr_input):
+                    return self.options.index(op)
+            else:
+                print("Invalid input. Try 'help' for a list of choices!")
+                continue
 
 ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyz "
 def strip_input(str_input):
