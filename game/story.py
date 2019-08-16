@@ -1,6 +1,6 @@
-from lib.places import outside
-from lib.places import downstairs
-from lib.places import upstairs
+from game.places import outside
+from game.places import downstairs
+from game.places import upstairs
 
 # The pathname should look like: code_start
 # The underscore seperates between the place (filename) and the action story-point
