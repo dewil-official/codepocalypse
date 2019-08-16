@@ -50,6 +50,7 @@ OUTSIDE = {
         choices.sub_choice(name="go to b", cmds=["go b", "b"], next_place="place-b"),
         choices.sub_choice(name="go to c", cmds=["go c", "c"], next_place="place-c"),
     ]),
+
     "someplace": point(text="...", choice_type="list", choices=[
         choices.sub_choice(name="go to a", cmds=["go a", "a"], next_place="outside_place-a"),
         choices.sub_choice(name="go to b", cmds=["go b", "b"], next_place="place-b"),

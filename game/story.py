@@ -8,6 +8,8 @@ from game.classes import point
 # place being the filename in /places
 # point being the actual point in story
 def continue_path(pathname):
+    if pathname == "end_game":
+        exit()
     path = pathname.split("_")
     if path[0] == "outside":
         outside.OUTSIDE[path[1]].exec()
