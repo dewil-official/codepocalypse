@@ -91,7 +91,7 @@ UPSTAIRS = {
     ]),
     "drink": point(text=MSG["drink"], choice_type="txt", nxt="upstairs_to-the-toilet"),
     "to-the-toilet": point(text=MSG["to-the-toilet"], choice_type="list", choices=[
-        choices.sub_choice(name="infect", cmds=["infect", "help infect"], next_place="upstairs_help-infect"),
+        choices.sub_choice(name="rescue", cmds=["rescue"], next_place="upstairs_help-infect"),
         choices.sub_choice(name="hide", cmds=["hide","run","go away"], next_place="upstairs_hide"),
     ]),
     "help-infect":point(text=MSG["help-infect"], choice_type="txt", nxt="upstairs_end-game"),
@@ -100,7 +100,7 @@ UPSTAIRS = {
         choices.sub_choice(name="trust", cmds=["trust", "trust him", "trust frank"], next_place="upstairs_not-believe"),
         choices.sub_choice(name="nope", cmds=["nope","dont trust", "no"], next_place="upstairs_trust-frank"),
     ]),
-    "not-believe": point(text=MSG["not-believe"], choice_type="txt", nxt="upstairs_end-game"),
+    "not-believe": point(text=MSG["not-believe"], choice_type="txt", nxt="end-game"),
     "trust-frank": point(text=MSG["trust-frank"], choice_type="list", choices=[
         choices.sub_choice(name="destroy", cmds=["destroy", "kill", "die"], next_place="upstairs_destroy"),
         choices.sub_choice(name="reprogram", cmds=["reprogram", "recode", "code"], next_place="upstairs_reprogram"),

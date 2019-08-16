@@ -1,5 +1,6 @@
 import time
 import sys
+import os
 from game.classes import choices
 from game import story
 
@@ -32,7 +33,7 @@ class point:
         if self.choice_type == "list":
             return choices.list_choice(self.choices).get_choice()
         if self.choice_type == "txt":
-            time.sleep(4)
+            os.system("pause")
 
     def exec(self):
         self.print_story()
