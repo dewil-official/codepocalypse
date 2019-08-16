@@ -90,12 +90,12 @@ UPSTAIRS = {
         choices.sub_choice(name="mate", cmds=["mate", "club","club mate"], next_place="upstairs_drink"),
     ]),
     "drink": point(text=MSG["drink"], choice_type="txt", nxt="upstairs_to-the-toilet"),
-    "to-the-toilet": point(text=MSG["keep-going"], choice_type="list", choices=[
+    "to-the-toilet": point(text=MSG["to-the-toilet"], choice_type="list", choices=[
         choices.sub_choice(name="infect", cmds=["infect", "help infect"], next_place="upstairs_help-infect"),
         choices.sub_choice(name="hide", cmds=["hide","run","go away"], next_place="upstairs_hide"),
     ]),
     "help-infect":point(text=MSG["help-infect"], choice_type="txt", nxt="upstairs_end-game"),
-    "hide":point(text=MSG["hide"], choice_type="txt", nxt="frank-finds"),
+    "hide":point(text=MSG["hide"], choice_type="txt", nxt="upstairs_frank-finds"),
     "frank-finds": point(text=MSG["frank-finds"], choice_type="list", choices=[
         choices.sub_choice(name="trust", cmds=["trust", "trust him", "trust frank"], next_place="upstairs_not-believe"),
         choices.sub_choice(name="nope", cmds=["nope","dont trust", "no"], next_place="upstairs_trust-frank"),
