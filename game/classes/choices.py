@@ -1,5 +1,5 @@
 import commands
-from lib import story
+from game import story
 
 class choice:
     options = [ commands.command() ]
