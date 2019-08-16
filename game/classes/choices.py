@@ -12,9 +12,6 @@ class choice:
     def get_choice(self):
         pass
 
-    def run_path(self):
-        pass
-
 class yesno_choice(choice):
     options = [commands.yes(), commands.no()]
 
@@ -49,8 +46,11 @@ class sub_choice():
         else:
             return False
 
+    def run_path(self):
+        story.continue_path(self.next_place)
+
 class list_choice(choice):
-    def __init__(self, choices=[ sub_choice("") ]):
+    def __init__(self, choices=[ sub_choice() ]):
         self.options = choices
     
     def get_choice(self):

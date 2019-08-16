@@ -13,10 +13,11 @@ MSG = {
 }
 
 OUTSIDE = {
-    "intro": point(text=MSG["intro"], choice_type="yesno", choices=[ "outside_going", "outside_not-going" ]),
+    "intro": point(text=MSG["intro"], choice_type="yesno", choices=[ "outside_someplace", "outside_not-going" ]),
     "someplace": point(text="...", choice_type="list", choices=[
-        choices.sub_choice(name="go to a", cmds=["go a", "a"], next_place="place-a"),
+        choices.sub_choice(name="go to a", cmds=["go a", "a"], next_place="outside_place-a"),
         choices.sub_choice(name="go to b", cmds=["go b", "b"], next_place="place-b"),
         choices.sub_choice(name="go to c", cmds=["go c", "c"], next_place="place-c"),
     ]),
+    "place-a": point(text=MSG["intro"], choice_type="yesno", choices=[ "outside_someplace", "outside_not-going" ]),
 }
