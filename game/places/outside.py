@@ -14,21 +14,25 @@ MSG = {
 
 Ouch, damn. Yeh, there must have been an update overnight.
 
-They said that your new chip could burn from time to time...This is a really bad headache. 
+They said that your new chip could burn from time to time...
+
+...This is a really bad headache. 
 
 Are you sure you want to go in to Code?""",
     # not going to Code will lead to the beginning
-    "not-going": "test",
+    "not-going": """Alright, Netflix theeeen...""",
     # going to code will pop some text
     "going": """This was a bad decision! 
 
-You know bed would have been better. But I respect your work ethic. 
+You know bed would have been better. 
+
+But I respect your work ethic. 
 
 But look...
 
 What the hell are they doing? 
 
-...Touching heads, weird. That is soooooo Berlin…""",
+...Touching heads, weird. That is soooooo Berlin...""",
 }
 
 OUTSIDE = {
@@ -36,5 +40,5 @@ OUTSIDE = {
     "not-going": point(text=MSG["not-going"], choice_type="list", choices=[
         choices.sub_choice(name="type restart", cmds=["restart","start over"], next_place="outside_intro"),
     ]),
-    "going": point(text=MSG["going"], choice_type="txt", nxt="downstairs"),
+    "going": point(text=MSG["going"], choice_type="txt", nxt="downstairs_stairs-or-elevator"),
 }
