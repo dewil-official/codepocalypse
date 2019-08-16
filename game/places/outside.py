@@ -37,8 +37,6 @@ What the hell are they doing?
 
 OUTSIDE = {
     "intro": point(text=MSG["wakeup"], choice_type="yesno", choices=[ "outside_going", "outside_not-going" ]),
-    "not-going": point(text=MSG["not-going"], choice_type="list", choices=[
-        choices.sub_choice(name="type restart", cmds=["restart","start over"], next_place="outside_intro"),
-    ]),
+    "not-going": point(text=MSG["not-going"], choice_type="txt", nxt="outside_intro"),
     "going": point(text=MSG["going"], choice_type="txt", nxt="downstairs_stairs-or-elevator"),
 }
