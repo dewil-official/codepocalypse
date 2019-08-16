@@ -9,11 +9,11 @@ from game.classes import choices
 #    (if list type:) [  ]
 
 MSG = {
-    "intro": "You wake up.."
+    "intro": "You wake up...",
 }
 
 OUTSIDE = {
-    "intro": point(text=MSG["intro"], choice_type="yesno", choices=[ "outside_someplace", "outside_not-going" ]),
+    "intro": point(text=MSG["intro"], choice_type="yesno", choices=[ "someplace", "place-a" ]),
     "someplace": point(text="...", choice_type="list", choices=[
         choices.sub_choice(name="go to a", cmds=["go a", "a"], next_place="outside_place-a"),
         choices.sub_choice(name="go to b", cmds=["go b", "b"], next_place="place-b"),
